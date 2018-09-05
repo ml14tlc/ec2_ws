@@ -36,4 +36,5 @@ inventory_group: instances
 # The remote username
 instance_user: ubuntu
 # The path to the AWS keypair
-aws_keypair_path: /home/matteo/.ssh/kp_ml_frankfurt.pem
+#aws_keypair_path: /home/matteo/.ssh/kp_ml_frankfurt.pem
+aws_keypair_path: /Users/mlanati/.ssh/kp_ml_frankfurt.pem

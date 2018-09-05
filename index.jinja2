@@ -1,0 +1,21 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Metronom Demo</title>
+  </head>
+  <body>
+    <h1>Welcome to {{ ansible_fqdn }}</h1>
+    <form method="post" action="/cgi-bin/pwdform.py">
+      Password length:<br>
+      <input type="text" name="pwdlen"> <br>
+      <select name="alphanum">
+        <option value="onlyalphanum">Alpahnumeric only</option>
+        <option value="specialchars">Special characters too</option>
+      </select> <br>
+      <input type="submit" value="Submit"> <br>
+    </form>
+  </body>
+</html>
+

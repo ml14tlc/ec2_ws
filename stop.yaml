@@ -1,0 +1,28 @@
+---
+
+- name: Stop the instance
+  hosts: localhost
+  tags:
+    - instance
+  tasks:
+  - name: Check the input variables
+    assert:
+      that:
+        - ec2_instance_id is defined
+        - ec2_instance_ip is defined
+  - name: Disassociate the IP
+    ec2_eip:
+      aws_access_key: "{{ aws_acc_key }}"
+      aws_secret_key: "{{ aws_sec_key }}"
+      region: "{{ aws_region }}"
+      instance_id: "{{ ec2_instance_id }}"
+      ip: "{{ ec2_instance_ip }}"
+      state: absent
+  - name: Terminate the instance
+    ec2:
+      aws_access_key: "{{ aws_acc_key }}"
+      aws_secret_key: "{{ aws_sec_key }}"
+      region: "{{ aws_region }}"
+      instance_ids: 
+        - "{{ ec2_instance_id }}"
+      state: absent

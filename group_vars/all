@@ -1,0 +1,39 @@
+# The access key
+aws_acc_key: AKIAJYB5H6VPLF5CLESA 
+# The secret key, encrypted with vault
+aws_sec_key: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          64303262616639366165646261646637326165346530623732353038306265356635306462356462
+          6264613537383737383262346264303462646166643165630a323866373038303066653436393036
+          39643034626262663062323332376538313165333534326465343238623637633637343630316465
+          3261353233613135610a363738643939346130316535346633356638393539333266306439623862
+          63323665386663313930663963343030353665313333396437333632613033623432376333663063
+          6230333535356235326361306637666631333966383739343266
+# The AWS region
+aws_region: eu-central-1
+# The VPC name
+vpc_name: metronom_demo
+# The network for the whole VPC
+vpc_cidr: "192.168.10.0/24"
+# The subnet
+vpc_subnet_cidr: "192.168.10.0/26"
+# The security group name
+vpc_sg_name: metronom_demo_sg
+# Ubuntu Server 16.04 LTS (HVM), SSD Volume Type
+instance_ami_id: ami-027583e616ca104df
+# Instance type for free tier
+instance_free_type: t2.micro 
+# Keypair to connect to the instance
+instance_keypair: kp_ml_frankfurt 
+
+# How many times to check the instance status
+num_retries: 6
+# How many seconds to wait between two attempts
+delay_sec: 10
+
+# The group for the new instance
+inventory_group: instances
+# The remote username
+instance_user: ubuntu
+# The path to the AWS keypair
+aws_keypair_path: /home/matteo/.ssh/kp_ml_frankfurt.pem
